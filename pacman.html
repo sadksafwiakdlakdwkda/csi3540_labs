@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+
+    .game {
+      max-width: 800px;
+      margin: 30px auto;
+    }
+    .board {
+        display: grid;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .tile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: calc(10% - 10px);
+        position: relative;
+        border: 1px solid black;
+    }
+
+    .tile:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="game" class="game">
+      <div class="board" style="grid-template-columns: repeat(10, 1fr)">
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+      </div>
+    </div>
+    <script>
+
+      console.log("hello");
+      let game = {
+        board: [".", ".",".", ".",".", "C",".", ".",".", "."],
+        display: function() {
+          console.log(this.board);
+        },
+        moveLeft: function() {
+          this.board = [".", ".",".", ".","C", ".",".", ".",".", "."]
+        }
+      };
+
+      game.display();
+
+      game.moveLeft();
+
+      game.display();
+
+
+      // let inc = function(i) {
+      //   // console.log(`inc ${i} + 1 = ${i + 1}`);
+      //   return i + 1;
+      // }
+
+      // console.log("bonjour 3");
+      // var i = 0
+
+      // let actions = [];
+      // while (i < 10) {
+      //   i = inc(i);
+      //   let x = 10 - i;
+      //   let a = function() {
+      //     console.log(`a ${x} + 1 = ${x + 1}`);
+      //     return x + 1;
+      //   };
+      //   actions.push(a)
+      // }
+
+      // for (i in actions) {
+      //   console.log(actions[i]());
+      // }
+
+    </script>
+  </body>
+</html>
+
+
