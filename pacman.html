@@ -1,97 +1,88 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mini jeu Pac-Man</title>
+<style>
+  #game-container {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 24px;
+  }
+  .button {
+    margin: 5px;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="game-container"></div>
+
+<button class="button" onclick="move('left')">Déplacer à gauche</button>
+<button class="button" onclick="move('right')">Déplacer à droite</button>
+<button class="button" onclick="resetGame()">Réinitialiser le jeu</button>
 
 
-    .game {
-      max-width: 800px;
-      margin: 30px auto;
+<script>
+
+let game = createGame(10); 
+updateGameDisplay(game);
+
+function move(direction) {
+  if (direction === 'left') {
+    game = moveLeft(game);
+  } else if (direction === 'right') {
+    game = moveRight(game);
+  }
+  updateGameDisplay(game);
+}
+
+function updateGameDisplay(game) {
+  const gameContainer = document.getElementById('game-container');
+  gameContainer.textContent = game.join(' ');
+}
+
+function moveLeft(game) {
+    let pacmanIndex = game.indexOf("C");
+    if (pacmanIndex > 0) {
+        game[pacmanIndex] = " ";
+        game[pacmanIndex - 1] = "C";
     }
-    .board {
-        display: grid;
-        width: 100%;
-        gap: 10px;
+    else{
+        game[0] = " "
+        game[game.length-1] = "C"
+
     }
+    return game;
+}
 
-    .tile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: calc(10% - 10px);
-        position: relative;
-        border: 1px solid black;
+function moveRight(game) {
+    let pacmanIndex = game.indexOf("C");
+    if (pacmanIndex < game.length - 1) {
+        game[pacmanIndex] = " ";
+        game[pacmanIndex + 1] = "C";
     }
-
-    .tile:before {
-        content: '';
-        display: block;
-        padding-top: 100%;
+    else{
+      game[game.length - 1] = " "
+      game[0]= "C"
     }
+    return game;
+}
 
-    </style>
-    <script src="pacman.js"></script>
-  </head>
-  <body>
-    <div id="game" class="game">
-      <div class="board" style="grid-template-columns: repeat(10, 1fr)">
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-        <span class="tile"></span>
-      </div>
-    </div>
-    <script>
+function createGame(n){
+    let game = new Array(n).fill(".");
+    game[Math.round(n/2)-1] = "C";
+    game[Math.round(n*4/3)-1] = "@";
+    game[n-2] = "^";
+    return game;
+}
+function resetGame() {
+    game = createGame(10); 
+    updateGameDisplay(game); 
+}
 
-      console.log("hello");
-      let game = {
-        board: [".", ".",".", ".",".", "C",".", ".",".", "."],
-        display: function() {
-          console.log(this.board);
-        },
-        moveLeft: function() {
-          this.board = [".", ".",".", ".","C", ".",".", ".",".", "."]
-        }
-      };
+</script>
 
-      game.display();
-
-      game.moveLeft();
-
-      game.display();
-
-
-      // let inc = function(i) {
-      //   // console.log(`inc ${i} + 1 = ${i + 1}`);
-      //   return i + 1;
-      // }
-
-      // console.log("bonjour 3");
-      // var i = 0
-
-      // let actions = [];
-      // while (i < 10) {
-      //   i = inc(i);
-      //   let x = 10 - i;
-      //   let a = function() {
-      //     console.log(`a ${x} + 1 = ${x + 1}`);
-      //     return x + 1;
-      //   };
-      //   actions.push(a)
-      // }
-
-      // for (i in actions) {
-      //   console.log(actions[i]());
-      // }
-
-    </script>
-  </body>
+</body>
 </html>
-
-
