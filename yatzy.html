@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="game" class="game">
+      le jeu
+    </div>
+    <script>
+
+      let yatzy = function() {
+        let entity = {
+          score: {
+            counts: new Array(6).fill(null),
+          },
+          dice: new Array(5).fill(null),
+        };
+
+        function is_available(num) {
+          return entity.score.counts[num - 1] === null;
+        }
+
+        entity.calculateScore = function(num) {
+          if (!is_available(num)) {
+            return null;
+          }
+
+          let score = 0;
+          for (const d of entity.dice) {
+            if (d == num) {
+              score += d;
+            }
+          }
+          return score;
+        }
+
+        entity.addCount = function(num, count) {
+          entity.score.counts[num-1] = num * count;
+        }
+
+        entity.countScore = function() {
+          let score = 0;
+          for (const i in entity.score.counts) {
+            score += entity.score.counts[i];
+          }
+          return score;
+        }
+
+        return entity;
+      }();
+
+      //
+      // // console.log(yatzy.countScore());
+
+      yatzy.dice = [2, 6, 1, 3, 3];
+
+      yatzy.addCount(3, 2);
+      yatzy.addCount(5, 4);
+      console.log(yatzy.score.counts);
+      console.log(yatzy.dice);
+      console.log(yatzy.calculateScore(1));
+      console.log(yatzy.calculateScore(2));
+      console.log(yatzy.calculateScore(3));
+      console.log(yatzy.calculateScore(4));
+      console.log(yatzy.calculateScore(5));
+      console.log(yatzy.calculateScore(6));
+
+    </script>
+  </body>
+</html>
+
+
