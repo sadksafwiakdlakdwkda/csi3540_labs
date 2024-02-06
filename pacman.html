@@ -46,10 +46,20 @@ function updateGameDisplay(game) {
 function moveLeft(game) {
     let pacmanIndex = game.indexOf("C");
     if (pacmanIndex > 0) {
+		if(game[pacmanIndex - 1] == "^"){
+			window.prompt("you lose!")
+			let newGame = createGame(game.length)
+			return newGame
+      }
         game[pacmanIndex] = " ";
         game[pacmanIndex - 1] = "C";
     }
     else{
+		if(game[game.length] == "^"){
+			window.prompt("you lose!")
+			let newGame = createGame(game.length)
+			return newGame
+		}
         game[0] = " "
         game[game.length-1] = "C"
 
@@ -60,12 +70,22 @@ function moveLeft(game) {
 function moveRight(game) {
     let pacmanIndex = game.indexOf("C");
     if (pacmanIndex < game.length - 1) {
+      	if(game[pacmanIndex + 1] == "^"){
+			window.prompt("you lose!")
+			let newGame = createGame(game.length)
+			return newGame
+      }
         game[pacmanIndex] = " ";
         game[pacmanIndex + 1] = "C";
     }
     else{
-      game[game.length - 1] = " "
-      game[0]= "C"
+		if(game[0] == "^"){
+			window.prompt("you lose!")
+			let newGame = createGame(game.length)
+			return newGame
+		}
+        game[game.length - 1] = " "
+        game[0]= "C"
     }
     return game;
 }
@@ -73,7 +93,7 @@ function moveRight(game) {
 function createGame(n){
     let game = new Array(n).fill(".");
     game[Math.round(n/2)-1] = "C";
-    game[Math.round(n*4/3)-1] = "@";
+    game[Math.round(n*3/4)-1] = "@";
     game[n-2] = "^";
     return game;
 }
