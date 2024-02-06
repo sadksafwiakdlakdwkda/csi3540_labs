@@ -9,7 +9,7 @@
     <script src="yatzy_engine.js"></script>
 </head>
 <body>
-    <button onclick="rollAll()">jouer</button><br>
+    <button onclick="rollAll()">commencer</button><br>
     <label for="">vous voulez reroll laquel dice</label><form>  
         <input type="checkbox" name="options" value="option1"><div id="container1" class="container"></div><br>
         <input type="checkbox" name="options" value="option2"><div id="container2" class="container"></div><br>
@@ -18,5 +18,19 @@
         <input type="checkbox" name="options" value="option5"><div id="container5" class="container"></div><br>
         <button type="button" onclick="executeFunction()">roll</button>
     </form>
+    <table border="1px">
+        <tr>
+            <td>two same</td>
+            <td id="same2"><button onclick="twosame()">click</button></td>
+        </tr>
+        <tr>
+            <td>three same</td>
+            <td id="same3"><button onclick="threesame()">click</button></td>
+        </tr>
+        <tr>
+            <td>four same</td>
+            <td id="same4"><button onclick="foursame()">click</button></td>
+        </tr>
+    </table>
 </body>
 </html>
