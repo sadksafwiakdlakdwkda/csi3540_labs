@@ -1,2 +1,2 @@
 ## couleur
-|HEX code|display|display|
+| HEX code | display | display |
