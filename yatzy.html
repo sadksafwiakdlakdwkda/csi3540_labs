@@ -7,30 +7,73 @@
     <link rel="stylesheet" href="dice.css">
     <script src="dice.js"></script>
     <script src="yatzy_engine.js"></script>
+    <style>
+        .left {
+        float: left;
+        width: 40%;
+        }
+        .right {
+        float: right;
+        width: 60%;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="rollAll()">commencer</button><br>
-    <label for="">vous voulez reroll laquel dice</label><form>  
-        <input type="checkbox" name="options" value="option1"><div id="container1" class="container"></div><br>
-        <input type="checkbox" name="options" value="option2"><div id="container2" class="container"></div><br>
-        <input type="checkbox" name="options" value="option3"><div id="container3" class="container"></div><br>        
-        <input type="checkbox" name="options" value="option4"><div id="container4" class="container"></div><br>
-        <input type="checkbox" name="options" value="option5"><div id="container5" class="container"></div><br>
-        <button type="button" onclick="executeFunction()">roll</button>
-    </form>
-    <table border="1px">
-        <tr>
-            <td>two same</td>
-            <td id="same2"><button onclick="twosame()">click</button></td>
-        </tr>
-        <tr>
-            <td>three same</td>
-            <td id="same3"><button onclick="threesame()">click</button></td>
-        </tr>
-        <tr>
-            <td>four same</td>
-            <td id="same4"><button onclick="foursame()">click</button></td>
-        </tr>
-    </table>
+    <h1 style="color:#fff12f; text-align: center;">yatzy</h1>
+    <button onclick="rollAll()">commencer</button><br><br>
+    <div class="left">
+        <label for="">vous voulez reroll laquel dice</label><form>  
+            <input type="checkbox" name="options" value="option1"><div id="container1" class="container"></div><br>
+            <input type="checkbox" name="options" value="option2"><div id="container2" class="container"></div><br>
+            <input type="checkbox" name="options" value="option3"><div id="container3" class="container"></div><br>        
+            <input type="checkbox" name="options" value="option4"><div id="container4" class="container"></div><br>
+            <input type="checkbox" name="options" value="option5"><div id="container5" class="container"></div><br>
+            <button type="button" onclick="executeFunction()">roll</button>
+        </form>
+    </div>
+    <div class="right">
+        <table border="1px">
+            <tr>
+                <td>one</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>two</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>three</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>four</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>five</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>six</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>two same</td>
+                <td id="same2"><button onclick="twosame()">click</button></td>
+            </tr>
+            <tr>
+                <td>three same</td>
+                <td id="same3"><button onclick="threesame()">click</button></td>
+            </tr>
+            <tr>
+                <td>four same</td>
+                <td id="same4"><button onclick="foursame()">click</button></td>
+            </tr>
+            <tr>
+                <td>total</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
