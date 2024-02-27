@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="engine.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="content">
+        <h2>Règle</h2>
+        <p>Deux joueurs, l'un faisant un cercle  et l'autre une croix , 
+            placent à tour de rôle leurs propres symboles sur la grille. 
+            Le premier à former une ligne gagne. Cliquez sur "Start" pour
+             commencer ou recommencer le jeu.</p>
+        <div class="index"><h3>Votre nom:</h3>
+        <input type="text" id="player1" placeholder="Enter name of player 1"><br>
+        <input type="text" id="player2" placeholder="Enter name of player 2"><br>
+        <button onclick="NewGame()">Start</button></div>
+        <br><br>
+        <h2>Record:</h2>
+        <ul>
+            <li><span id="name1">player 1</span>: <span id="score1">0</span></li>
+            <li><span id="name2">player 2</span>: <span id="score2">0</span></li>
+        </ul>
+    </div>
+    <table>
+        <tr>
+            <td class="cell" onclick=move(1) id="1"></td>
+            <td class="cell" onclick=move(2) id="2"></td>
+            <td class="cell" onclick=move(3) id="3"></td>
+        </tr>
+        <tr>
+            <td class="cell" onclick=move(4) id="4"></td>
+            <td class="cell" onclick=move(5) id="5"></td>
+            <td class="cell" onclick=move(6) id="6"></td>
+        </tr>
+        <tr>
+            <td class="cell" onclick=move(7) id="7"></td>
+            <td class="cell" onclick=move(8) id="8"></td>
+            <td class="cell" onclick=move(9) id="9"></td>
+        </tr>
+    </table>
+</body>
+</html>
