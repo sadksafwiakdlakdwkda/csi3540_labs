@@ -8,23 +8,23 @@ This game is designed for two players and allows for entering player names and t
 In this exemple, player 1 click the third cell of the third row.
 ![plager win](win.png)
 
-## draw
+## Draw
 ![draw](draw.png)
 
 
-## backgroud
+## Backgroud
 
 couleur: azure
 
-## titre
+## Titre
 
-| attributs | Display                                                                 
+| Attributs | Display                                                                 
 |-----------|-----------
 | couleur     | black            
 | Emplacement | center    
 
-## cell
-| attributs | Display                                                                 
+## Cell
+| Attributs | Display                                                                 
 |-----------|-----------
 |border     | 2px solid #333
 |width      | 100px
