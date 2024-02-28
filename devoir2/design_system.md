@@ -1,4 +1,4 @@
-![index](index.png)
+![index](./design_system/index.png)
 
 ## Overview
 This game is designed for two players and allows for entering player names and tracking their scores. The players can type their names to start. When they type their names again, the score will be zero and restart the game.
@@ -6,10 +6,10 @@ This game is designed for two players and allows for entering player names and t
 ## When a player win
 
 In this exemple, player 1 click the third cell of the third row.
-![plager win](win.png)
+![plager win](./design_system/win.png)
 
 ## Draw
-![draw](draw.png)
+![draw](./design_system/draw.png)
 
 
 ## Backgroud
