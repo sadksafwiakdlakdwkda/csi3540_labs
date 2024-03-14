@@ -6,13 +6,16 @@ class Game
     public $board;
     public $currentPlayer;
     public $winner; 
+    public $winplayer1;
+    public $winplayer2;
 
     public function __construct()
     {
         $this->board = [['', '', ''], ['', '', ''], ['', '', '']];
         $this->currentPlayer = "X";
         $this->winner = null;
-
+        $this->winplayer1 = 0;
+        $this->winplayer2 = 0;
     }
 
     public function win() {
@@ -52,13 +55,22 @@ class Game
         if ($this->board[$row][$col] == '') {
             $this->board[$row][$col] = $this->currentPlayer;
             if ($this->win()) {
-                $this->winner = $this->currentPlayer; 
+                $this->winner = $this->currentPlayer;
+                $this->refleshrecord(); 
             } elseif ($this->draw()) {
                 $this->winner = "Nobody"; 
             } else {
                 $this->currentPlayer = $this->currentPlayer == "X" ? "O" : "X";
             }
         }
+    }
+
+    public function refleshrecord(){
+        if ($this->winner == "X"){
+            $this->winplayer1 +=1 ;
+    }else{
+        $this->winplayer2 +=1;
+        }    
     }
 
     public static function fromJson($json)

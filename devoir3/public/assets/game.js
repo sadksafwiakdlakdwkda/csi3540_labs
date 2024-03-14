@@ -8,15 +8,31 @@ let TicTacToeApi = {
       }
     });
   },
+  continueGame: function() {
+    $.ajax({
+      type: "GET",
+      url: "api.php?path=/game",
+      success: function(game) {
+        console.log(game)
+      }
+    });
+  },
   move: function(position, render) {
     $.ajax({
       type: "GET",
       url: `api.php?path=/game/move&pos=${position}`,
       success: function(game) {
+        console.log(game)
         render.refresh(game); 
+        updaterecord(game);
       }
     });
   },
+}
+
+function updaterecord(game){
+  let record = document.getElementById("leaderboard");
+  record.innerHTML="<li>player 1:"+game.winplayer1+"</li><li>player 2:"+game.winplayer2+"</li>";
 }
 
 $(document).ready(function() {
@@ -47,12 +63,12 @@ $(document).ready(function() {
     }
     if (game.winner == "X" || game.winner == "O") {
         alert("Player " + game.winner + " wins!");
-        TicTacToeApi.newGame();
+        TicTacToeApi.continueGame();
         restart();
         
     } else if (game.winner == "Nobody") {
         alert("It's a draw!");
-        TicTacToeApi.newGame();
+        TicTacToeApi.continueGame();
         restart();
     }
 }

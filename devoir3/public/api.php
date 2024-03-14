@@ -42,6 +42,8 @@ switch ($fullPath) {
         break;
     case "/game":
         $g = game();
+        $g->winner = null;
+        $g->board = [['', '', ''], ['', '', ''], ['', '', '']];
         $reply = persistGame($g);
         break;
 }

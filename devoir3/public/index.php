@@ -14,8 +14,13 @@
         <h2>Règle</h2>
         <p>Deux joueurs, l'un faisant un cercle  et l'autre une croix , 
             placent à tour de rôle leurs propres symboles sur la grille. 
-            Le premier à former une ligne gagne. Cliquez sur "Start" pour
-             commencer ou recommencer le jeu.</p>
+            Le premier à former une ligne gagne.</p>
+        <br><br>
+        <h2>Record:</h2>
+        <ul id="leaderboard">
+            <li>player 1:0</li>
+            <li>player 2:0</li>
+        </ul>
     </div>
     <table>
         <tr>
