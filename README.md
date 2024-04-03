@@ -8,4 +8,4 @@ Pour commencer le jeu, on peut typer les noms, ensuit cliquer sur "Start". Il y 
 C'est le Tic Tac Toe de php. Afin de pouvoir l'ouvrir dans le portfolio, veuillez exécuter le serveur sur le port 4040.
 
 ## Devoir 4
-C'est le 'Hospital Triage'. Afin de pouvoir l'ouvrir dans le portfolio, veuillez exécuter le serveur sur le port 8080.
+C'est le 'Hospital Triage'. Afin de pouvoir l'ouvrir dans le portfolio, veuillez exécuter le serveur sur le port 8080. Et pour ouvrir l'administrateur，allez dans /admin.php
